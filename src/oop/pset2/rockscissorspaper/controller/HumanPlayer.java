@@ -10,7 +10,7 @@ public class HumanPlayer implements Player {
     @Override
     public Movement showMove(DeckMoves deckMoves) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Show up your move among the following: ");
+        System.out.print("Write your move ");
         show(deckMoves);
         System.out.print("Your choice: ");
         String choice = scanner.nextLine();
