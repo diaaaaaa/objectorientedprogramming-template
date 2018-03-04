@@ -1,8 +1,8 @@
 package oop.pset2;
 
-public class Pset2Main {
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+import oop.pset2.controller.RockPaperScissors;
+
+public class Pset2Main {
+    public static void main(String[] args) {new RockPaperScissors().play();}
 }

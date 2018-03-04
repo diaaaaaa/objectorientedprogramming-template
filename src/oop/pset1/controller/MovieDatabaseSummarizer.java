@@ -4,9 +4,11 @@ import oop.pset1.model.Actor;
 import oop.pset1.model.Movie;
 import oop.pset1.model.Summary;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MovieDatabaseSummarizer {
 
@@ -44,13 +46,14 @@ public class MovieDatabaseSummarizer {
 
             // 2 feedback words that were used the most
             Map<String, Long> appearances = actors.stream()
-                    .map(actor -> actor.getMostHiredActors())
-                    .flatMap(hierd -> hierd.stream())
+                    .map(actor -> actor.getActotName())
+                    .map(actor ->actor.split(","))
+                    .flatMap(hierd -> Arrays.stream(hierd))
                     .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 
 
             List<String> mostHiredActor = appearances.entrySet().stream()
-                    .filter(name -> !name.getKey().contains("0"))
+                    /*.filter(name -> !name.getKey().contains("0"))
                     .filter(name -> !name.getKey().contains("1"))
                     .filter(name -> !name.getKey().contains("2"))
                     .filter(name -> !name.getKey().contains("3"))
@@ -64,7 +67,10 @@ public class MovieDatabaseSummarizer {
                     .filter(name -> !name.getKey().contains(")"))
                     .filter(name -> !name.getKey().contains("("))
                     .filter(name -> !name.getKey().contains("/"))
-                    .filter(name -> !name.getKey().contains("\""))
+                    .filter(name -> !name.getKey().contains("\""))*/
+
+                    //.peek(name-> System.out.println(name.getKey()))
+
                     .filter(name -> name.getKey().contains(" "))
                     .filter(name -> name.getKey() != null && name.getValue() != null)
                     .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))

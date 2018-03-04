@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -29,25 +30,30 @@ public class ActorParser {
     private Function<String[], Actor> toActor() {
         return columns -> {
             Actor actor = new Actor();
-            actor.setMostHiredActors(toRealActor(columns[0]));
+            actor.setActotName(toRealActor(columns[0]));
             actor.setActorsMaleFemaleRatio(toGender(columns[0]));
             return actor;
         };
     }
 
-    private List<String> toRealActor(String column) {
+    private String toRealActor(String column) {
         String objects = column.replaceAll("\\[", "").replaceAll("]", "");
         objects = objects.replaceAll("\\{", "").replaceAll("}", "");
         objects = objects.replaceAll("'", "");
 
         String[] words = objects.split(", ");
+      //  Arrays.stream(words).forEach(word -> System.out.println(word));
         return Stream.of(words)
-                .filter(word -> !word.contains("character:"))
+                //.filter(word -> !word.("character:"))
+                .filter(word -> word.contains("name:"))
+                //.map(word->word.replaceAll("name:",""))
+                //.peek(word-> System.out.println(word))
+
                 .map(word -> word.split(": "))
-                .filter(word -> word != null)
-                .filter(line -> line.length == 2 )
+                //.filter(word -> word != null)
+             //   .filter(line -> line.length == 2 )
                 .map(word -> word[1])
-                .collect(Collectors.toList());
+                .collect(Collectors.joining(","));
 
     }
     private List<String> toGender(String column) {
