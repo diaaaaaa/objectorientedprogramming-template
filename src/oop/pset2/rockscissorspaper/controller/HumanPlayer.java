@@ -1,6 +1,6 @@
-package oop.pset2.controller;
+package oop.pset2.rockscissorspaper.controller;
 
-import oop.pset2.model.Movement;
+import oop.pset2.rockscissorspaper.model.Movement;
 
 import java.util.Scanner;
 import java.util.stream.Collectors;

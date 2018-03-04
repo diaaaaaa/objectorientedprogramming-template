@@ -1,4 +1,4 @@
-package oop.pset2.controller;
+package oop.pset2.rockscissorspaper.controller;
 
 public class Players {
 

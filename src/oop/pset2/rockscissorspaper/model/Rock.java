@@ -1,4 +1,4 @@
-package oop.pset2.model;
+package oop.pset2.rockscissorspaper.model;
 
 public class Rock implements Movement {
     @Override

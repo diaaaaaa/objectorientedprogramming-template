@@ -1,7 +1,7 @@
-package oop.pset2.view;
+package oop.pset2.rockscissorspaper.view;
 
 
-import oop.pset2.model.Movement;
+import oop.pset2.rockscissorspaper.model.Movement;
 
 public class DisplayResults {
     public void sayResult(Movement move1, Movement move2) {
