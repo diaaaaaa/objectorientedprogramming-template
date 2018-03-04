@@ -8,7 +8,7 @@ public class BurgerHouseRestaurant {
     public void visit() {
         Menu menu = new Menu();
         ShowMenu showMenu = new ShowMenu();
-        showMenu.showMenu();
+        showMenu.showMenu(menu);
 
 
 
