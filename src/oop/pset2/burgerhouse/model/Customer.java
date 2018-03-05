@@ -14,4 +14,5 @@ public class Customer {
     public void setNumberOfCustomers(Integer numberOfCustomers) {
         this.numberOfCustomers = numberOfCustomers;
     }
+
 }

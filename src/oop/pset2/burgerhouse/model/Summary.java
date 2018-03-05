@@ -3,13 +3,14 @@ package oop.pset2.burgerhouse.model;
 import java.util.List;
 
 public class Summary {
-    private List<String> mostExpensiveFiveDishes ;
+    private List<String> orders;
 
-    public List<String> getMostExpensiveFiveDishes() {
-        return mostExpensiveFiveDishes;
+    public List<String> getOrders() {
+        return orders;
     }
 
-    public void setMostExpensiveFiveDishes(List<String> mostExpensiveFiveDishes) {
-        this.mostExpensiveFiveDishes = mostExpensiveFiveDishes;
+    public void setOrders(List<String> orders) {
+        this.orders = orders;
     }
+
 }
