@@ -5,4 +5,12 @@ public class Rock implements Movement {
     public String getName() {
         return "Rock";
     }
+
+    @Override
+    public boolean wins(Movement move) {
+        if (move.getName().equalsIgnoreCase("Scissors") || move.getName().equalsIgnoreCase("Lizard"))
+        return true;
+        return false;
+    }
+
 }

@@ -2,6 +2,7 @@ package oop.pset3.controller;
 
 
 
+import oop.pset3.model.Lizard;
 import oop.pset3.model.*;
 
 import java.util.ArrayList;

@@ -11,7 +11,17 @@ public class DisplayResults {
         System.out.println("Player 1 move: " + move1.getName());
         System.out.println("Player 2 move: " + move2.getName());
 
-        if (move1.getName().equalsIgnoreCase(move2.getName())) {
+        if (move1.wins(move2)) {
+            System.out.println("Player 1 wins");
+        }
+        else if (move2.wins(move1)) {
+            System.out.println("Player 2 wins");
+        }
+        else
+            System.out.println("Nobody wins");
+
+
+        /*if (move1.getName().equalsIgnoreCase(move2.getName())) {
             System.out.println("Nobody wins.");
         } else if (move1.getName().equalsIgnoreCase("Scissors") && move2.getName().equalsIgnoreCase("Paper")) {
             System.out.println("Player 1 wins.");
@@ -34,7 +44,7 @@ public class DisplayResults {
         } else if (move1.getName().equalsIgnoreCase("Spock") && move2.getName().equalsIgnoreCase("Rock")) {
             System.out.println("Player 1 wins.");
         } else
-            System.out.println("Player 2 (you) wins.");
+            System.out.println("Player 2 (you) wins.");*/
 
 
     }

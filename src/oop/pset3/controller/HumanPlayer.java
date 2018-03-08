@@ -19,13 +19,13 @@ public class HumanPlayer implements Player {
 
     private void show(DeckMoves deckMoves) {
         String movements = deckMoves.getMoves().stream()
-                .map(card -> card.getName())
+                .map(move -> move.getName())
                 .collect(Collectors.joining(", "));
         System.out.println(movements);
     }
     private Movement toMonement(String choice, DeckMoves deck) {
         return deck.getMoves().stream()
-                .filter(card -> card.getName().equalsIgnoreCase(choice))
+                .filter(move -> move.getName().equalsIgnoreCase(choice))
                 .findFirst().get();
     }
 }
