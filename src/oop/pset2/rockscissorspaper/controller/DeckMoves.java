@@ -2,10 +2,7 @@ package oop.pset2.rockscissorspaper.controller;
 
 
 
-import oop.pset2.rockscissorspaper.model.Movement;
-import oop.pset2.rockscissorspaper.model.Paper;
-import oop.pset2.rockscissorspaper.model.Rock;
-import oop.pset2.rockscissorspaper.model.Scissors;
+import oop.pset2.rockscissorspaper.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
