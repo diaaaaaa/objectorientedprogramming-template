@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class MovieDatabaseSummarizer {
 
@@ -84,12 +83,17 @@ public class MovieDatabaseSummarizer {
                     .map(actor -> actor.getActorsMaleFemaleRatio())
                     .flatMap(genders -> genders.stream())
                     .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+            // How many actors are there
+            long numbersOfActors = actors.stream()
+                  .map(e -> e.getActorsMaleFemaleRatio())
+                  .count();
 
 
             List<String> ActorsMaleFemaleRatio = ratio.entrySet().stream()
                     //.sorted()
-                    .map(e -> toGender(e) + " " +"("+ toRatio(e) +")")
+                    .map(e -> toGender(e) + " " +"("+ toRatio(e)/numbersOfActors +")")
                     .collect(Collectors.toList());
+
 
 
 
@@ -100,13 +104,13 @@ public class MovieDatabaseSummarizer {
             return summaryy;
         }
 
-        private String toRatio(Map.Entry<String, Long> e) {
+        private double toRatio(Map.Entry<String, Long> e) {
             double ratioValue = e.getValue();
             String key = e.getKey();
             if (key.equals("1")){
-                return String.valueOf((ratioValue /150105) * 100+" %");
+                return ratioValue * 100;
             }
-            return String.valueOf((ratioValue /150105) * 100 +" %");
+            return ratioValue * 100;
 
         }
 
