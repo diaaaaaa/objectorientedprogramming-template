@@ -1,4 +1,4 @@
-package oop.pset3.model;
+package oop.pset4.pset33.model;
 
 public class Paper implements Movement {
     @Override

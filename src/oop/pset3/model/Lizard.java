@@ -1,18 +1,20 @@
-package oop.pset3.model;
+package oop.pset4.pset33.model;
 
-import oop.pset3.model.Movement;
+public class Lizard implements Movement {
 
-public class Lizard implements oop.pset3.model.Movement {
+    @Override
+    public String getName() {
+        return "Lizard";
+    }
 
-        @Override
-        public String getName() {
-            return "Lizard";
-        }
     @Override
     public boolean wins(Movement move) {
-        if (move.getName().equalsIgnoreCase("Spock") || move.getName().equalsIgnoreCase("Paper"))
-        return true;
-        return false;
+        return isEqualTo(move, "Spock") || isEqualTo(move, "Paper");
+
+    }
+
+    private boolean isEqualTo(Movement move, String name) {
+        return move.getName().equalsIgnoreCase(name);
     }
 
 

@@ -1,6 +1,6 @@
-package oop.pset3;
+package oop.pset4.pset33;
 
-import oop.pset3.controller.RockPaperScissors;
+import oop.pset4.pset33.controller.RockPaperScissors;
 
 import java.util.Scanner;
 

@@ -1,9 +1,9 @@
-package oop.pset3.view;
+package oop.pset4.pset33.view;
 
 
-import oop.pset3.model.Movement;
+import oop.pset4.pset33.model.Movement;
 
-public class DisplayResults {
+public class Jury {
     public void sayResult(Movement move1, Movement move2) {
 
 

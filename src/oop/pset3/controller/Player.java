@@ -1,7 +1,7 @@
-package oop.pset3.controller;
+package oop.pset4.pset33.controller;
 
 
-import oop.pset3.model.Movement;
+import oop.pset4.pset33.model.Movement;
 
 public interface Player {
     Movement showMove(DeckMoves deckMoves);}

@@ -1,10 +1,10 @@
-package oop.pset3.controller;
+package oop.pset4.pset33.controller;
 
 
 
 
-import oop.pset3.model.Movement;
-import oop.pset3.view.DisplayResults;
+import oop.pset4.pset33.model.Movement;
+import oop.pset4.pset33.view.Jury;
 
 import java.util.Scanner;
 
@@ -21,7 +21,7 @@ public class RockPaperScissors {
         Player player2 = players.getOnePlayer();
         Movement move1 = player1.showMove(deckMoves);
         Movement move2 = player2.showMove(deckMoves);
-        DisplayResults jury = new DisplayResults();
+        Jury jury = new Jury();
         jury.sayResult(move1, move2);
     }
 
